@@ -4,42 +4,56 @@
 
 ## 📊 Project Overview
 
-- **Business Context**: A ride-hailing platform observed declining 7-day repurchase rates, primarily driven by users completing first rides via WeChat/Alipay mini-programs (lower retention vs native app). 
-- **My Role**: Data Analytics Intern
-- **Key Objectives**:
-    1. Quantify coupon campaign impact on repurchase rates through rigorous A/B testing
-    2. Identify user segments insensitive to coupons using uplift modeling to save marketing costs
-    3. Determine optimal coupon value balancing repurchase lift vs subsidy cost
-    4. Design future A/B tests for strategy validation
+During my internship, I worked on improving the **7-day repurchase rate** of first-time users on a ride-hailing platform, particularly those who placed their first order via **Alipay or WeChat**. These users had significantly lower repurchase rates compared to app users, dragging down the platform’s overall retention.  
 
-## 🛠 Tech Stack & Tools
+The company launched an **A/B test** by sending selected users a discount coupon (4–10 RMB) via SMS the day after their first ride. My role was to **analyze the effectiveness of this coupon strategy** and provide actionable recommendations.
 
-- **Languages**: Python
-- **Libraries**: Pandas, NumPy, Scikit-learn, EconML, Matplotlib, Seaborn, SciPy
-- **Methods**: Hypothesis Testing (Chi-square), Causal Inference (Uplift Modeling), Machine Learning (Causal Forests)
+---
 
-## 💡 Key Analyses & Results
+## 🔧 Responsibilities
+- Designed and conducted **A/B tests** to measure coupon effectiveness  
+- Performed **statistical analysis** (chi-square test) to confirm significance  
+- Built an **uplift model (Causal Forest DML)** to identify heterogeneous treatment effects  
+- Applied **segmentation analysis** to detect user groups negatively impacted by coupons  
+- Optimized coupon allocation strategy by analyzing **cost-effectiveness vs. repurchase gain**
 
-#### 1. A/B Test Validation
-- **Approach**: Conducted chi-square tests to compare repurchase rates between treatment (received coupon) and control groups
-- **Result**: Statistically significant lift in repurchase rates for both platforms (**+3.95% for Alipay, +3.87% for WeChat**, p-value < 0.001)
+---
 
-#### 2. Uplift Modeling for Personalized Targeting
-- **Approach**: Implemented `CausalForestDML` from EconML to estimate Individual Treatment Effects (ITE)
-- **Result**: Identified **negative-response segment** (new users with short wait times + long trips) where coupons reduced platform entry probability by 0.8%. Recommended excluding this segment from campaigns.
+## ⚡ Key Challenges
+- Ensuring **experiment validity** despite unbalanced treatment/control groups  
+- Modeling **heterogeneous user responses**, since coupons worked for some users but not others  
+- Balancing **absolute repurchase gains** with **cost efficiency** of coupon distribution  
 
-#### 3. Cost-Benefit Optimization
-- **Approach**: Analyzed marginal repurchase lift per additional RMB across coupon values (4-10 RMB)
-- **Result**: While 8-10 RMB coupons maximized repurchase lift, **5-7 RMB coupons provided optimal cost-effectiveness**. Recommended tiered strategy based on budget constraints.
+---
 
-## 📈 Business Impact
+## 🛠️ Tools & Technologies
+- **Python**: pandas, numpy, matplotlib, seaborn  
+- **Statistical methods**: A/B testing, chi-square test  
+- **Causal inference**: EconML (CausalForestDML, uplift modeling)  
+- **Machine learning**: RandomForest, GradientBoosting for baseline modeling  
 
-- **Cost Savings**: Identified 8% of users as low/negative responders, enabling immediate cost reduction on SMS and coupon subsidies
-- **ROI Improvement**: Data-driven coupon valuation increased expected ROI by 15% compared to one-size-fits-all approach
-- **Strategic Foundation**: Established causal inference framework for future marketing optimization experiments
+---
+## 📊 Results
+- Coupons significantly improved repurchase rates
+- User heterogeneity discovered
+    - Some users (e.g., new users with very short waiting time but long trips) showed **negative response** to coupons  
+- Optimal coupon strategy 
+  - Repurchase-maximizing coupons: **8–10 RMB**  
+  - Cost-effectiveness-maximizing coupons: **5–7 RMB**  
+  - Recommended a **segmented strategy**:  
+    - Allocate high-value coupons to high-potential users  
+    - Use mid-range coupons for general users  
+    - Exclude low-response segments  
 
-## 🧠 Lessons Learned
+---
 
-- **Technical**: Gained hands-on experience applying cutting-edge causal ML techniques to real-world business problems
-- **Business**: Developed keen understanding of balancing customer acquisition costs with long-term retention value
-- **Future Work**: Exploring advanced feature engineering (temporal patterns, geospatial data) to enhance model precision
+## 🎯 Business Impact
+- Provided **data-driven recommendations** for targeted coupon distribution  
+- Helped the platform reduce marketing costs while maintaining repurchase uplift  
+- Improved decision-making by demonstrating how **causal inference + machine learning** can optimize marketing interventions  
+
+---
+
+## ✨ Key Takeaways
+
+This project demonstrates how **data science + causal inference** can be applied to **real-world business problems** such as customer retention and marketing ROI optimization.
